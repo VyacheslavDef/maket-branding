@@ -1,1 +1,53 @@
 @import 'reset.scss';
+@import 'default.scss';
+
+header {
+    height: 120px;
+    background-color: bisque;
+    border-bottom: 1px solid $clrBorder;
+}
+
+.title_container {
+    width: 100%;
+    display: flex;
+
+    .left_wrapper {
+        width: 50%;
+        
+        .title_text {
+            margin-top: 230px;
+        }
+
+        .title_discription {
+            margin-top: 16px;
+        }
+
+        .title_buttons {
+            margin-top: 56px;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 250px;
+        }
+    }
+
+    .right_wrapper {
+        width: 600px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .cube {
+            width: 50%;
+            height: 33.3333%;
+        }
+    }
+}
+
+.triangle2-top-left{
+    width:10px;
+    height:10px;
+    border-top-right-radius: 30%;
+    // border-top: 25% solid #525da1;
+    // border-right: 25% solid transparent;
+    // border-bottom: 25% solid #020411;
+    // border-left: 25% solid transparent;
+}
