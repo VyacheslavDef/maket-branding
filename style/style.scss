@@ -13,9 +13,12 @@ header {
 
     .left_wrapper {
         width: 50%;
+        padding-right: 100px;
+        margin-left: 5%;
         
         .title_text {
             margin-top: 230px;
+            text-transform: uppercase;
         }
 
         .title_discription {
@@ -25,19 +28,16 @@ header {
         .title_buttons {
             margin-top: 56px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-bottom: 250px;
         }
     }
 
     .right_wrapper {
-        width: 600px;
-        display: flex;
-        flex-wrap: wrap;
+        width: 50%;
 
-        .cube {
-            width: 50%;
-            height: 33.3333%;
+        .img_title {
+            width: 100%;
         }
     }
 }

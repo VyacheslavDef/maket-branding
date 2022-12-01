@@ -56,6 +56,22 @@ h1, h2, h3, h4, h5, h6, p {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Urbanist";
+  src: url("../font/Urbanist-Medium.ttf");
+}
+h1, h2, h3, h4, h5, h6, p {
+  font-family: "Urbanist";
+}
+
+h1 {
+  line-height: 73px;
+}
+
+p {
+  line-height: 30px;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
@@ -74,75 +90,11 @@ p {
 }
 
 .buttons_m {
-  padding: 17px 56px;
-  background-color: orangered;
-}
-
-.form1 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #233B99;
-}
-.form1 .low_form1 {
-  width: 100%;
-  height: 133.33px;
-  background: #CDDCEB;
-  border: 2px solid #CDDCEB;
-  border-radius: 0 0 50% 50%/0 0 100% 100%;
-}
-.form1 .low_form2 {
-  width: 100%;
-  height: 133.33px;
-  background: #3c52a6;
-  border-radius: 50% 50% 0 0/100% 100% 0 0;
-  border: 2px solid #3c52a6;
-}
-
-.form2 {
-  width: 0;
-  height: 0;
-  border-top: 266px solid #FF7549;
-  border-left: 300px solid #ffdacd;
-}
-
-.form3 {
-  width: 0;
-  height: 0;
-  border-top: 266px solid transparent;
-  border-right: 300px solid #FF7549;
-}
-
-.form4 {
-  background: #233B99;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.form4 .low_form3 {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  background: #CDDCEB;
-}
-
-.form5 {
-  width: 0;
-  height: 0;
-  border-top: 266px solid #233B99;
-  border-left: 300px solid #CDDCEB;
-}
-
-.form6 {
-  background: #FF7549;
-  display: flex;
-  align-items: flex-end;
-}
-.form6 .low_form4 {
-  width: 300px;
-  height: 100%;
-  background: #ffdacd;
-  border-top-left-radius: 100%;
+  padding: 18px 56px;
+  background-color: #FF7549;
+  font-size: 20px;
+  font-family: "Urbanist";
+  text-transform: uppercase;
 }
 
 header {
@@ -157,9 +109,12 @@ header {
 }
 .title_container .left_wrapper {
   width: 50%;
+  padding-right: 100px;
+  margin-left: 5%;
 }
 .title_container .left_wrapper .title_text {
   margin-top: 230px;
+  text-transform: uppercase;
 }
 .title_container .left_wrapper .title_discription {
   margin-top: 16px;
@@ -167,17 +122,14 @@ header {
 .title_container .left_wrapper .title_buttons {
   margin-top: 56px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 250px;
 }
 .title_container .right_wrapper {
-  width: 600px;
-  display: flex;
-  flex-wrap: wrap;
-}
-.title_container .right_wrapper .cube {
   width: 50%;
-  height: 33.3333%;
+}
+.title_container .right_wrapper .img_title {
+  width: 100%;
 }
 
 .triangle2-top-left {
