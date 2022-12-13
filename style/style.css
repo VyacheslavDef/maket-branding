@@ -73,8 +73,12 @@ p {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1220px;
   margin: auto;
+}
+
+section {
+  border-bottom: solid 1px black;
 }
 
 h1 {
@@ -103,32 +107,35 @@ header {
   border-bottom: 1px solid #DAD9D6;
 }
 
-.title_container {
+.title_section {
+  display: flex;
+}
+.title_section .title_container {
   width: 100%;
   display: flex;
 }
-.title_container .left_wrapper {
-  width: 50%;
-  padding-right: 100px;
-  margin-left: 5%;
+.title_section .title_container .left_wrapper {
+  width: 65%;
+  margin-left: 10%;
+  margin-top: 235px;
 }
-.title_container .left_wrapper .title_text {
-  margin-top: 230px;
+.title_section .title_container .left_wrapper .title_text {
   text-transform: uppercase;
 }
-.title_container .left_wrapper .title_discription {
+.title_section .title_container .left_wrapper .title_discription {
   margin-top: 16px;
 }
-.title_container .left_wrapper .title_buttons {
+.title_section .title_container .left_wrapper .title_buttons {
   margin-top: 56px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 250px;
 }
-.title_container .right_wrapper {
+.title_section .right_wrapper {
   width: 50%;
+  max-height: 100%;
 }
-.title_container .right_wrapper .img_title {
+.title_section .right_wrapper .img_title {
   width: 100%;
 }
 
