@@ -78,7 +78,13 @@ p {
 }
 
 section {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px #DAD9D6;
+  margin-bottom: 250px;
+}
+
+.text_title {
+  text-transform: uppercase;
+  width: 50%;
 }
 
 h1 {
@@ -87,6 +93,11 @@ h1 {
 
 h2 {
   font-size: 40px;
+  line-height: 58px;
+}
+
+h5 {
+  font-size: 28px;
 }
 
 p {
@@ -99,6 +110,10 @@ p {
   font-size: 20px;
   font-family: "Urbanist";
   text-transform: uppercase;
+}
+
+.img_test {
+  width: 100%;
 }
 
 header {
@@ -132,15 +147,57 @@ header {
   margin-bottom: 250px;
 }
 .title_section .right_wrapper {
+  display: flex;
   width: 50%;
   max-height: 100%;
-}
-.title_section .right_wrapper .img_title {
-  width: 100%;
 }
 
 .triangle2-top-left {
   width: 10px;
   height: 10px;
   border-top-right-radius: 30%;
+}
+
+.advantage_section {
+  margin-bottom: 80px;
+}
+.advantage_section .advantage_text_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.advantage_section .advantage_text_wrapper .advantage_title_text {
+  width: 50%;
+  text-transform: uppercase;
+}
+
+.advantage_items_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.advantage_items_wrapper .advantage_item {
+  padding-right: 5%;
+  padding-bottom: 70px;
+  width: 33.33%;
+}
+.advantage_items_wrapper .advantage_item .advantage_item_text {
+  padding: 23px 0 13px;
+}
+
+.started_wrapper .started_wrapper_text {
+  display: flex;
+  justify-content: space-between;
+}
+.started_wrapper .started_disc {
+  display: flex;
+}
+.started_wrapper .started_disc .started_wrapper_left {
+  width: 40%;
+}
+.started_wrapper .started_disc .started_wrapper_center {
+  width: 20%;
+}
+.started_wrapper .started_disc .started_wrapper_right {
+  width: 40%;
 }/*# sourceMappingURL=style.css.map */
