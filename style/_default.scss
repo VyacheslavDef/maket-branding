@@ -4,32 +4,53 @@ $clrBlue: #233B99;
 $clrBlueLight: #3c52a6 ;
 $clrGrey: #CDDCEB;
 $clrBorder: #DAD9D6;
+$clrDarkBlue: #181A3F;
+
+@mixin button_s ($pt, $pb, $clrbtn, $fontbtn:20px, $borderc) {
+    padding: $pt $pb;
+    background-color: $clrbtn;
+    font-size: $fontbtn;
+    font-family: 'Urbanist';
+    text-transform: uppercase;
+    border: 1px solid $borderc;
+    cursor: pointer;
+    display: inline-block;
+}
 
 @font-face {
     font-family: 'Urbanist';
     src: url('../font/Urbanist-Medium.ttf');
 }
 
-h1,h2,h3,h4,h5,h6,p {
+h1,h2,h3,h4,h5,h6,p,ul,li {
     font-family: 'Urbanist';
-}
-
-h1 {
-    line-height: 73px;
-}
-
-p {
-    line-height: 30px;
+    cursor: default;
 }
 
 .container {
-    max-width: 1220px;
+    max-width: 1268px;
     margin: auto;
+    padding-right: 24px;
+    padding-left: 24px;
 }
 
 section {
     border-bottom: solid 1px #DAD9D6;
-    margin-bottom: 250px;
+    padding-top: 240px;
+    padding-bottom: 240px;
+}
+
+.bgg {
+    background: #F0EFEC;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.title_wrapper_text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
 }
 
 .text_title {
@@ -37,29 +58,67 @@ section {
     width: 50%;
 }
 
+.color_option {
+    color: #FF7549;
+}
+
 h1 {
     font-size: 54px;
+    line-height: 73px;
+    color: #181A3F;
+    font-weight: 900;
 }
 h2 {
     font-size: 40px;
     line-height: 58px;
+    color: #181A3F;
+    font-weight: 900;
+}
+h4 {
+    font-size: 32px;
+    color: #181A3F;
 }
 h5 {
     font-size: 28px;
+    line-height: 39px;
+    color: #181A3F;
+}
+h6 {
+    font-size: 20px;
+    color: #181A3F;
 }
 p {
     font-size: 18px;
+    line-height: 30px;
+    color: #555671;
 }
 
-.buttons_m {
+.q {
+    display: flex;
+}
+
+.button_one {
     padding: 18px 56px;
     background-color: $clrOrange;
     font-size: 20px;
     font-family: 'Urbanist';
     text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid $clrOrange;
 }
 
+.button_two {
+    padding: 18px 56px;
+    background-color: transparent;
+    font-size: 20px;
+    font-family: 'Urbanist';
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    border: 2px solid $clrDarkBlue;
+}
 
 .img_test {
-    width: 100%;
+    display: inline-block;
 }
