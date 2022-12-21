@@ -3,8 +3,7 @@
 
 header {
   height: 120px;
-  background: orange;
-  border-bottom: 1px solid $clrBorder;
+  // border-bottom: 1px solid $clrBorder;
   .header_wrapper {
     display: flex;
     justify-content: space-between;
@@ -26,9 +25,14 @@ header {
     display: flex;
 
     .left_wrapper {
-      width: 65%;
+      width: 100%;
       margin-left: 10%;
       margin-top: 235px;
+      padding-left: 5%;
+      padding-right: 5%;
+      @include breakpoint (lg) {
+        margin-left: 0;
+      }
 
       .title_text {
         text-transform: uppercase;
@@ -41,6 +45,10 @@ header {
       .title_buttons {
         margin-top: 56px;
         margin-bottom: 250px;
+        @include breakpoint (lg) {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }
@@ -50,6 +58,13 @@ header {
     right: 0;
     width: 50%;
     max-width: 46%;
+    @include breakpoint(md) {
+      position: initial;
+      z-index: -1;
+      opacity: 30%;
+      width: 0;
+      object-fit: cover;
+    }
     img {
       position: absolute;
       left: 0px;
@@ -57,43 +72,32 @@ header {
       height: 100%;
       object-fit: cover;
       object-position: 0% 50%;
+      bottom: 0;
     }
   }
 }
 
-.advantage_section {
-  margin-bottom: 80px;
 
-  .advantage_text_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .advantage_title_text {
-      width: 50%;
-      text-transform: uppercase;
+  .advantage_items_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 97px;
+    grid-row-gap: 75px;
+    @include breakpoint(lg) {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 60px;
+      grid-row-gap: 75px;
+    }
+    @include breakpoint(sm) {
+      grid-template-columns: 1fr;
+    }
+    .advantage_item {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
     }
   }
-}
 
-.advantage_items_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-
-  .advantage_item {
-    padding-right: 5%;
-    padding-bottom: 70px;
-    width: 33.33%;
-    h5 {
-      font-weight: 900;
-    }
-
-    .advantage_item_text {
-      padding: 23px 0 13px;
-    }
-  }
-}
 
 .started_wrapper {
 
@@ -105,6 +109,7 @@ header {
     margin-bottom: 80px;
   }
 
+
   .started_disc {
     display: flex;
 
@@ -113,6 +118,13 @@ header {
       * {
         display: flex;
         justify-content: flex-end;
+      }
+
+      img {
+        display: flex;
+        @include breakpoint(xl) {
+          display: none;
+        }
       }
       .started_wrapper_left_text {
         padding: 0 60px 60px 0;
@@ -123,6 +135,12 @@ header {
       width: 40%;
       * {
         display: flex;
+      }
+      img {
+        display: flex;
+        @include breakpoint(xl) {
+          display: none;
+        }
       }
       .started_wrapper_right_text {
         padding: 60px 0 0 60px;
@@ -141,8 +159,6 @@ header {
       width: 40%;
     }
 
-    .project_wrapper_disc {
-    }
   }
 }
 
@@ -151,13 +167,19 @@ header {
   justify-content: space-between;
   margin-left: 10%;
   min-height: 662px;
+  h2 {
+    text-transform: uppercase;
+  }
 
   .have_project_left_wrapper {
-    width: 50%;
+    width: 30%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+    @include breakpoint(sm) {
+      width: 100%;
+    }
   }
 
   .have_project_right_wrapper {
@@ -197,6 +219,11 @@ header {
 
     .step_item {
       width: 25%;
+      @include breakpoint (md) {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 80px;
+      }
       h5 {
         margin: 23px 0 13px;
       }
@@ -206,6 +233,9 @@ header {
   .step_buttons_wrapper {
     display: flex;
     justify-content: space-evenly;
+    @include breakpoint(sm) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -231,6 +261,10 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 182px 0;
+  @include breakpoint (md) {
+    flex-direction: column;
+    text-align: center;
+  }
 
   .work_text_left {
     width: 30%;
@@ -238,6 +272,10 @@ header {
     font-size: 60px;
     font-weight: 900;
     letter-spacing: 0.05em;
+    @include breakpoint (md) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
   }
 }
 
@@ -258,6 +296,10 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 182px;
+    @include breakpoint (md) {
+      justify-content: none;
+      flex-direction: column;
+    }
     .footer_left_wrapper {
       width: 30%;
     }
@@ -265,6 +307,10 @@ footer {
       width: 70%;
       display: flex;
       justify-content: space-evenly;
+      @include breakpoint (md) {
+        justify-content: none;
+        flex-direction: column;
+      }
       .footer_name_collumn {
         margin-bottom: 40px;
         text-transform: uppercase;

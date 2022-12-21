@@ -1,124 +1,198 @@
-$clrOrange: #FF7549;
+$clrOrange: #ff7549;
 $clrOrangeLight: #ffdacd;
-$clrBlue: #233B99;
-$clrBlueLight: #3c52a6 ;
-$clrGrey: #CDDCEB;
-$clrBorder: #DAD9D6;
-$clrDarkBlue: #181A3F;
+$clrBlue: #233b99;
+$clrBlueLight: #3c52a6;
+$clrGrey: #cddceb;
+$clrBorder: #dad9d6;
+$clrDarkBlue: #181a3f;
 
-@mixin button_s ($pt, $pb, $clrbtn, $fontbtn:20px, $borderc) {
-    padding: $pt $pb;
-    background-color: $clrbtn;
-    font-size: $fontbtn;
-    font-family: 'Urbanist';
-    text-transform: uppercase;
-    border: 1px solid $borderc;
-    cursor: pointer;
-    display: inline-block;
+@mixin breakpoint($point) {
+  @if $point == xl {
+    @media (max-width: 1230px) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
 }
+
+$marginValue: (
+  "8": 8px,
+  "16": 16px,
+  "24": 24px,
+  "32": 32px,
+  "40": 40px,
+  "48": 48px,
+  "56": 56px,
+  "64": 64px,
+  "72": 72px,
+  "80": 80px,
+);
+
+$marginDirection: (
+  "t": "top",
+  "r": "right",
+  "b": "bottom",
+  "l": "left",
+);
+
+@mixin margin-size($marginV: $marginValue, $marginD: $marginDirection) {
+  @each $mShort, $mLong in $marginD {
+    @each $mVSh, $mV in $marginV {
+      .m#{$mShort}-#{$mVSh} {
+        margin-#{$mLong}: $mV;
+      }
+    }
+  }
+}
+
+@include margin-size($marginValue, $marginDirection);
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('../font/Urbanist-Medium.ttf');
+  font-family: "Urbanist";
+  src: url("../font/Urbanist-Medium.ttf");
 }
 
-h1,h2,h3,h4,h5,h6,p,ul,li {
-    font-family: 'Urbanist';
-    cursor: default;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  font-family: "Urbanist";
+  cursor: default;
 }
 
 .container {
-    max-width: 1268px;
-    margin: auto;
-    padding-right: 24px;
-    padding-left: 24px;
+  max-width: 1268px;
+  margin: auto;
+  padding-right: 24px;
+  padding-left: 24px;
 }
 
 section {
-    border-bottom: solid 1px #DAD9D6;
-    padding-top: 240px;
-    padding-bottom: 240px;
+  border-bottom: solid 1px #dad9d6;
+  padding-top: 240px;
+  padding-bottom: 240px;
 }
 
 .bgg {
-    background: #F0EFEC;
-    padding-top: 0;
-    padding-bottom: 0;
+  background: #f0efec;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.title_wrapper_text {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 80px;
+.title_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+  @include breakpoint(sm) {
+    flex-direction: column;
+  }
 }
 
-.text_title {
-    text-transform: uppercase;
-    width: 50%;
+.text_wrapper {
+  text-transform: uppercase;
+  width: 50%;
+  @include breakpoint(sm) {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.button_wrapper {
+  @include breakpoint(sm) {
+    width: 100%;
+  }
 }
 
 .color_option {
-    color: #FF7549;
+  color: #ff7549;
 }
 
 h1 {
-    font-size: 54px;
-    line-height: 73px;
-    color: #181A3F;
-    font-weight: 900;
+  font-size: 54px;
+  line-height: 73px;
+  color: #181a3f;
+  font-weight: 900;
 }
 h2 {
-    font-size: 40px;
-    line-height: 58px;
-    color: #181A3F;
-    font-weight: 900;
+  font-size: 40px;
+  line-height: 58px;
+  color: #181a3f;
+  font-weight: 900;
 }
 h4 {
-    font-size: 32px;
-    color: #181A3F;
+  font-size: 32px;
+  color: #181a3f;
 }
 h5 {
-    font-size: 28px;
-    line-height: 39px;
-    color: #181A3F;
+  font-size: 28px;
+  line-height: 39px;
+  color: #181a3f;
 }
 h6 {
-    font-size: 20px;
-    color: #181A3F;
+  font-size: 20px;
+  color: #181a3f;
 }
 p {
-    font-size: 18px;
-    line-height: 30px;
-    color: #555671;
+  font-size: 18px;
+  line-height: 30px;
+  color: #555671;
 }
 
 .q {
-    display: flex;
+  display: flex;
 }
 
 .button_one {
-    padding: 18px 56px;
-    background-color: $clrOrange;
-    font-size: 20px;
-    font-family: 'Urbanist';
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px solid $clrOrange;
+  padding: 18px 56px;
+  background-color: $clrOrange;
+  font-size: 20px;
+  font-family: "Urbanist";
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid $clrOrange;
+  text-align: center;
+  @include breakpoint(sm) {
+    width: 100%;
+  }
 }
 
 .button_two {
-    padding: 18px 56px;
-    background-color: transparent;
-    font-size: 20px;
-    font-family: 'Urbanist';
-    text-transform: uppercase;
-    cursor: pointer;
-    display: inline-block;
-    border: 2px solid $clrDarkBlue;
+  padding: 18px 56px;
+  background-color: transparent;
+  font-size: 20px;
+  font-family: "Urbanist";
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid $clrDarkBlue;
+  text-align: center;
+  @include breakpoint(sm) {
+    width: 100%;
+  }
 }
 
 .img_test {
-    display: inline-block;
+  display: inline-block;
 }
