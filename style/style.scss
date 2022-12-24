@@ -19,6 +19,9 @@ header {
 
 .title_section {
   display: flex;
+  @include breakpoint (md) {
+    position: relative;
+  }
 
   .title_container {
     width: 100%;
@@ -61,10 +64,7 @@ header {
     right: 0;
     width: 100%;
     @include breakpoint(md) {
-      position: absolute;
-      z-index: -1;
-      left: 0;
-      right: 0;
+      display: none;
     }
     img {
       left: 0px;
@@ -81,6 +81,20 @@ header {
   }
 }
 
+@include breakpoint (md) {
+  .title_container::before{
+    content: "";
+    background: url(/img/IMAGE.svg);
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+}
 
   .advantage_items_wrapper {
     display: grid;
@@ -122,6 +136,9 @@ header {
 
     .started_wrapper_left {
       width: 60%;
+      @include breakpoint(xl) {
+        width: 100%;
+      }
       * {
         display: flex;
         justify-content: flex-end;
@@ -136,10 +153,16 @@ header {
       .started_wrapper_left_text {
         padding: 0 60px 60px 0;
         width: 60%;
+        @include breakpoint(xl) {
+          width: 100%;
+        }
       }
     }
     .started_wrapper_right {
       width: 40%;
+      @include breakpoint(xl) {
+        width: 100%;
+      }
       * {
         display: flex;
       }
@@ -167,6 +190,9 @@ header {
     .data {
       text-transform: uppercase;
       width: 40%;
+      @include breakpoint(md) {
+        width: 100%;
+      }
     }
 
   }
@@ -177,6 +203,12 @@ header {
   justify-content: space-between;
   margin-left: 10%;
   min-height: 662px;
+  position: relative;
+  @include breakpoint(sm) {
+    margin-left: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
   h2 {
     text-transform: uppercase;
   }
@@ -187,8 +219,12 @@ header {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
+    z-index: 2;
     @include breakpoint(sm) {
       width: 100%;
+      h2 {
+        text-align: center;
+      }
     }
   }
 
@@ -196,7 +232,9 @@ header {
     position: relative;
     right: 0;
     width: 50%;
-    max-width: 46%;
+    @include breakpoint(sm){
+      display: none;
+    }
     img {
       position: absolute;
       left: 0px;
@@ -208,6 +246,18 @@ header {
   }
 }
 
+@include breakpoint(sm){
+.have_project_wrapper::before {
+  content: "";
+  background: url(/img/have_project.svg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+}
 .step_wrapper {
   .text_step_wrapper {
     display: flex;
@@ -336,6 +386,10 @@ footer {
     }
     .footer_left_wrapper {
       width: 30%;
+      @include breakpoint (md) {
+        width: 100%;
+        margin-bottom: 24px;
+      }
     }
     .footer_right_wrapper {
       width: 70%;
@@ -352,6 +406,10 @@ footer {
       }
       .footer_collumn_items {
         display: flex;
+        @include breakpoint (md) {
+          flex-direction: column;
+          margin-bottom: 24px;
+        }
       }
     }
   }
