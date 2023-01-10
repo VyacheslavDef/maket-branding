@@ -7,7 +7,12 @@ $clrBorder: #dad9d6;
 $clrDarkBlue: #181a3f;
 
 @mixin breakpoint($point) {
-  @if $point == xl {
+  @if $point == xxl {
+    @media (max-width: 1440px) {
+      @content;
+    }
+  } 
+  @else if $point == xl {
     @media (max-width: 1230px) {
       @content;
     }
@@ -81,10 +86,16 @@ li {
 }
 
 .container {
-  max-width: 1268px;
+  max-width: 1440px;
   margin: auto;
   padding-right: 24px;
   padding-left: 24px;
+  @include breakpoint(xl) {
+    max-width: 1200px;
+  }
+  @include breakpoint(lg) {
+    max-width: 920px;
+  }
 }
 
 section {

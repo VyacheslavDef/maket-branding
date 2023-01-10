@@ -3,7 +3,7 @@
 
 header {
   height: 120px;
-  // border-bottom: 1px solid $clrBorder;
+
   .header_wrapper {
     display: flex;
     justify-content: space-between;
@@ -35,6 +35,7 @@ header {
       padding-right: 5%;
       @include breakpoint (lg) {
         margin-left: 0;
+        margin-top: 100px;
       }
 
       .title_text {
@@ -84,7 +85,7 @@ header {
 @include breakpoint (md) {
   .title_container::before{
     content: "";
-    background: url(/img/IMAGE.svg);
+    background: url(../img/IMAGE.svg);
     background-size: cover;
     opacity: 0.5;
     top: 0;
@@ -204,7 +205,7 @@ header {
   margin-left: 10%;
   min-height: 662px;
   position: relative;
-  @include breakpoint(sm) {
+  @include breakpoint(md) {
     margin-left: 0;
     padding-left: 16px;
     padding-right: 16px;
@@ -220,10 +221,13 @@ header {
     flex-direction: column;
     justify-content: center;
     z-index: 2;
-    @include breakpoint(sm) {
+    @include breakpoint(md) {
       width: 100%;
       h2 {
         text-align: center;
+      }
+      .button_one {
+        width: 100%;
       }
     }
   }
@@ -232,7 +236,7 @@ header {
     position: relative;
     right: 0;
     width: 50%;
-    @include breakpoint(sm){
+    @include breakpoint(md){
       display: none;
     }
     img {
@@ -246,10 +250,10 @@ header {
   }
 }
 
-@include breakpoint(sm){
+@include breakpoint(md){
 .have_project_wrapper::before {
   content: "";
-  background: url(/img/have_project.svg);
+  background: url(../img/have_project.svg);
   opacity: 0.5;
   top: 0;
   left: 0;
@@ -304,11 +308,11 @@ header {
     justify-content: space-evenly;
     @include breakpoint(sm) {
       flex-direction: column;
+      .button_one {
+        margin-bottom: 25px;
+      }
     }
 
-    .button_one {
-      margin-bottom: 25px;
-    }
   }
 }
 

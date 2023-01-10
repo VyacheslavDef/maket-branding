@@ -235,10 +235,20 @@ li {
 }
 
 .container {
-  max-width: 1268px;
+  max-width: 1440px;
   margin: auto;
   padding-right: 24px;
   padding-left: 24px;
+}
+@media (max-width: 1230px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 920px;
+  }
 }
 
 section {
@@ -414,6 +424,7 @@ header .header_wrapper .left_header {
 @media (max-width: 992px) {
   .title_section .title_container .left_wrapper {
     margin-left: 0;
+    margin-top: 100px;
   }
 }
 .title_section .title_container .left_wrapper .title_text {
@@ -464,7 +475,7 @@ header .header_wrapper .left_header {
 @media (max-width: 768px) {
   .title_container::before {
     content: "";
-    background: url(/img/IMAGE.svg);
+    background: url(../img/IMAGE.svg);
     background-size: cover;
     opacity: 0.5;
     top: 0;
@@ -591,7 +602,7 @@ header .header_wrapper .left_header {
   min-height: 662px;
   position: relative;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .have_project_wrapper {
     margin-left: 0;
     padding-left: 16px;
@@ -609,12 +620,15 @@ header .header_wrapper .left_header {
   justify-content: center;
   z-index: 2;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .have_project_wrapper .have_project_left_wrapper {
     width: 100%;
   }
   .have_project_wrapper .have_project_left_wrapper h2 {
     text-align: center;
+  }
+  .have_project_wrapper .have_project_left_wrapper .button_one {
+    width: 100%;
   }
 }
 .have_project_wrapper .have_project_right_wrapper {
@@ -622,7 +636,7 @@ header .header_wrapper .left_header {
   right: 0;
   width: 50%;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .have_project_wrapper .have_project_right_wrapper {
     display: none;
   }
@@ -638,10 +652,10 @@ header .header_wrapper .left_header {
      object-position: 0% 50%;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .have_project_wrapper::before {
     content: "";
-    background: url(/img/have_project.svg);
+    background: url(../img/have_project.svg);
     opacity: 0.5;
     top: 0;
     left: 0;
@@ -704,9 +718,9 @@ header .header_wrapper .left_header {
   .step_wrapper .step_buttons_wrapper {
     flex-direction: column;
   }
-}
-.step_wrapper .step_buttons_wrapper .button_one {
-  margin-bottom: 25px;
+  .step_wrapper .step_buttons_wrapper .button_one {
+    margin-bottom: 25px;
+  }
 }
 
 .art_res_wrapper .art_res_items_wrapper {
