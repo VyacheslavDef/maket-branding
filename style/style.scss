@@ -19,7 +19,7 @@ header {
 
 .title_section {
   display: flex;
-  @include breakpoint (md) {
+  @include breakpoint(md) {
     position: relative;
   }
 
@@ -30,10 +30,10 @@ header {
     .left_wrapper {
       width: 100%;
       margin-left: 10%;
-      margin-top: 235px;
+      margin-top: 200px;
       padding-left: 5%;
       padding-right: 5%;
-      @include breakpoint (lg) {
+      @include breakpoint(lg) {
         margin-left: 0;
         margin-top: 100px;
       }
@@ -47,14 +47,19 @@ header {
       }
 
       .title_buttons {
+        display: flex;
+        justify-content: space-between;
         margin-top: 56px;
         margin-bottom: 250px;
-        @include breakpoint (md) {
-          display: flex;
+        @include breakpoint(xl) {
           flex-direction: column;
         }
-        .button_one {
-          margin-bottom: 25px;
+        .button_one,
+        .button_two {
+          @include breakpoint(xl) {
+            width: 100%;
+            margin-bottom: 30px;
+          }
         }
       }
     }
@@ -76,14 +81,13 @@ header {
       bottom: 0;
       @include breakpoint(md) {
         opacity: 10%;
-
       }
     }
   }
 }
 
-@include breakpoint (md) {
-  .title_container::before{
+@include breakpoint(md) {
+  .title_container::before {
     content: "";
     background: url(../img/IMAGE.svg);
     background-size: cover;
@@ -94,40 +98,36 @@ header {
     right: 0;
     position: absolute;
     z-index: -1;
-}
-}
-
-  .advantage_items_wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 97px;
-    grid-row-gap: 75px;
-    @include breakpoint(lg) {
-      grid-template-columns: 1fr 1fr;
-      grid-column-gap: 60px;
-      grid-row-gap: 75px;
-    }
-    @include breakpoint(sm) {
-      grid-template-columns: 1fr;
-    }
-    .advantage_item {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
   }
+}
 
+.advantage_items_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 97px;
+  grid-row-gap: 75px;
+  @include breakpoint(lg) {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 60px;
+    grid-row-gap: 75px;
+  }
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr;
+  }
+  .advantage_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
 
 .started_wrapper {
-
-
   .started_wrapper_text {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 80px;
   }
-
 
   .started_disc {
     display: flex;
@@ -195,7 +195,6 @@ header {
         width: 100%;
       }
     }
-
   }
 }
 
@@ -221,6 +220,9 @@ header {
     flex-direction: column;
     justify-content: center;
     z-index: 2;
+    @include breakpoint(lg) {
+      width: 100%;
+    }
     @include breakpoint(md) {
       width: 100%;
       h2 {
@@ -236,7 +238,7 @@ header {
     position: relative;
     right: 0;
     width: 50%;
-    @include breakpoint(md){
+    @include breakpoint(md) {
       display: none;
     }
     img {
@@ -250,17 +252,17 @@ header {
   }
 }
 
-@include breakpoint(md){
-.have_project_wrapper::before {
-  content: "";
-  background: url(../img/have_project.svg);
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-}
+@include breakpoint(md) {
+  .have_project_wrapper::before {
+    content: "";
+    background: url(../img/have_project.svg);
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+  }
 }
 .step_wrapper {
   .text_step_wrapper {
@@ -292,7 +294,7 @@ header {
 
     .step_item {
       width: 25%;
-      @include breakpoint (md) {
+      @include breakpoint(md) {
         text-align: center;
         width: 100%;
         margin-bottom: 80px;
@@ -312,7 +314,6 @@ header {
         margin-bottom: 25px;
       }
     }
-
   }
 }
 
@@ -342,7 +343,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 182px 0;
-  @include breakpoint (md) {
+  @include breakpoint(md) {
     flex-direction: column;
     text-align: center;
   }
@@ -353,17 +354,18 @@ header {
     font-size: 60px;
     font-weight: 900;
     letter-spacing: 0.05em;
-    @include breakpoint (md) {
+    @include breakpoint(md) {
       width: 100%;
       margin-bottom: 25px;
     }
   }
 
   .work_text_right {
-    * {@include breakpoint(sm) {
-      font-size: 22px;
+    * {
+      @include breakpoint(sm) {
+        font-size: 22px;
+      }
     }
-  }
   }
 }
 
@@ -384,24 +386,38 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 182px;
-    @include breakpoint (md) {
+    @include breakpoint(md) {
       justify-content: none;
       flex-direction: column;
+      margin-bottom: 100px;
     }
     .footer_left_wrapper {
       width: 30%;
-      @include breakpoint (md) {
+      @include breakpoint(md) {
         width: 100%;
-        margin-bottom: 24px;
+        margin-bottom: 50px;
       }
     }
     .footer_right_wrapper {
       width: 70%;
       display: flex;
       justify-content: space-evenly;
-      @include breakpoint (md) {
-        justify-content: none;
+      @include breakpoint(lg) {
         flex-direction: column;
+        width: 50%;
+      }
+      @include breakpoint(md) {
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+      @include breakpoint(sm) {
+        flex-direction: column;
+      }
+      .footer_collumn_wrapper {
+        @include breakpoint(lg) {
+          margin-bottom: 30px;
+        }
       }
       .footer_name_collumn {
         margin-bottom: 40px;
@@ -410,7 +426,7 @@ footer {
       }
       .footer_collumn_items {
         display: flex;
-        @include breakpoint (md) {
+        @include breakpoint(md) {
           flex-direction: column;
           margin-bottom: 24px;
         }
